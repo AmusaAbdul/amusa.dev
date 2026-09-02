@@ -1,5 +1,5 @@
 
-const Form = ({ form, handleSubmit }) => {
+const Form = ({ form, handleSubmit, sending }) => {
   return (
       <div className="w-[50%] itemSpan space-y-5 text-start p-2">
           <p className="text-forest dark:text-gold-dark tracking-wider font-mono">GET IN TOUCH</p>
