@@ -23,12 +23,12 @@ const Contact = () => {
       )
       .then(
         () => {
-          alert("Message sent successfully!");
+          alert(`Thanks ${form.name}, Message sent successfully!`);
           form.current.reset();
         },
         (error) => {
           console.log("FAILED...", error);
-          alert("Something went wrong. Try again.");
+          alert("Something went wrong. Try again later.");
         }
       );
   };
