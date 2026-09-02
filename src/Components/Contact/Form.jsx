@@ -20,7 +20,9 @@ const Form = ({ form, handleSubmit }) => {
                   <textarea name="message" className="border outline-none itemSpan bg-surface border-line h-30 dark:bg-surface-2-dark p-2 rounded-xl dark:border-ink-soft" placeholder="Write your message here"></textarea>
               </span>
 
-              <button type="submit" className="bg-forest dark:bg-gold-dark font-bold w-fit rounded-xl text-bg dark:text-forest-dark p-2 h-fit">Send message</button>
+              <button disabled={sending} type="submit" className="bg-forest dark:bg-gold-dark font-bold w-fit rounded-xl text-bg dark:text-forest-dark p-2 h-fit"> 
+                {sending ? "Sending..." : "Send message"}
+              </button>
           </form>
       </div>
 

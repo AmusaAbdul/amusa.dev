@@ -6,12 +6,14 @@ import Social from "./Social";
 
 const Contact = () => {
   const form = useRef(null);
+  const [sending, setSending] = useState(false);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("FORM:", form.current);
-
+    setSending(true);
+    const name = form.current.name.value;
     emailjs
       .sendForm(
         "service_vl00rbe",
@@ -23,10 +25,12 @@ const Contact = () => {
       )
       .then(
         () => {
-          alert(`Thanks ${form.name}, Message sent successfully!`);
+          setSending(false);
+          alert(`Thanks ${name}, Message sent successfully!`);
           form.current.reset();
         },
         (error) => {
+          setSending(false);
           console.log("FAILED...", error);
           alert("Something went wrong. Try again later.");
         }
@@ -37,10 +41,9 @@ const Contact = () => {
     <div>
       <div className="container p-5 pt-20 WeekSitting items-center mt-5 flex flex-col gap-10">
         <Form
-          form={form}
+          form={form} sending={sending}
           handleSubmit={handleSubmit}
         />
-
         <Social />
       </div>
     </div>
