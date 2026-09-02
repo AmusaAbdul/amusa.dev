@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #F3F5EF;
+  --surface: #FFFFFF;
+  --surface-2: #EDF0E6;
+  --ink: #182019;
+  --ink-soft: #4B564C;
+  --forest: #2F4A3C;
+  --forest-dark: #1C2E25;
+  --gold: #C9A227;
+  --gold-soft: #EADFB3;
+  --line: #DBE2D3;
+  --terminal-bg: #101913;
+  --terminal-line: #233029;
+  --terminal-text: #DCE8DE;
+}
+
+:root {
+  --dark-bg: #141912;
+  --dark-surface: #1B221C;
+  --dark-surface-2: #212B22;
+  --dark-ink: #EDF2E9;
+  --dark-ink-soft: #AAB5A6;
+  --dark-forest: #7FA88E;
+  --dark-gold: #E0BB4A;
+  --dark-line: #2C362D;
+
+}
+
+@theme {
+  --color-bg: #F3F5EF;
+  --color-bg-dark: #141912;
+
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EDF0E6;
+  --color-surface-dark: #1B221C;
+  --color-surface-2-dark: #212B22;
+
+  --color-ink: #182019;
+  --color-ink-soft: #4B564C;
+  --color-ink-dark: #EDF2E9;
+  --color-ink-soft-dark: #AAB5A6;
+
+  --color-forest: #2F4A3C;
+  --color-forest-dark: #1C2E25;
+  --color-forest-light: #7FA88E;
+
+  --color-gold: #C9A227;
+  --color-gold-soft: #EADFB3;
+  --color-gold-dark: #E0BB4A;
+
+  --color-line: #DBE2D3;
+  --color-line-dark: #2C362D;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius-card: 14px;
+  --radius-control: 10px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 1px 2px rgba(24, 32, 25, 0.04), 0 8px 24px rgba(24, 32, 25, 0.06);
+}
+
+body {
+  margin: 0;
+  font-family: Space Grotesk;
+  @apply bg-bg text-ink;
+
+}
+
+.dark body {
+  @apply bg-bg-dark text-ink-dark;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@utility notebook {
+  background-image: repeating-linear-gradient(to bottom,
+      transparent 0px,
+      transparent 39px,
+      #bdc8b9 40px);
+
+  @variant dark {
+    background-image: repeating-linear-gradient(to bottom,
+        transparent 0px,
+        transparent 39px,
+        #2c362d 40px);
+  }
+}
+
+.container {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.desktop {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radius {
+  border-radius: 16px 16px 0px 0px;
+}
+
+ .backToTop {
+   position: fixed;
+   bottom: 30px;
+   right: 30px;
+   padding: 10px 14px;
+   border-radius: 50%;
+   border: none;
+   cursor: pointer;
+ }
+
+@media (max-width: 799px) {
+  .project-card {
+    width: 100%;
+  }
+
+  .itemSpan {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 800px) {
+  .WeekSitting {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+@media (min-width: 800px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 1000px;
+  }
+}
