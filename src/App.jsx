@@ -7,7 +7,7 @@ import Education from "./Components/Education/Education"
 import Contact from "./Components/Contact/Contact"
 import Footer from "./Components/Footer"
 import BtnUp from "./Components/BtnUp"
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
