@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 
 function BackToTop() {
-    const [show, setShow] = useState(false);
+    const [shows, setShows] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setShow(window.scrollY > 300);
+            setShows(window.scrollY > 300);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -14,7 +14,7 @@ function BackToTop() {
     }, []);
 
     return (
-        show && (
+        shows && (
             <div className="container">
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
