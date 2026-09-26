@@ -8,7 +8,7 @@ const AboutText = () => {
             <div className="mt-5 flex flex-col gap-5 itemSpan">
                 <p className="font-body tracking-wide text-ink-soft dark:text-ink-soft-dark">
                     I'm a <span className="font-bold text-ink dark:text-ink-soft-dark">frontend developer</span> who enjoys building modern, responsive, user-friendly
-                    web experience, writing clean, scalable code andturning ideas into interfaces that solve real
+                    web experience, writing clean, scalable code and turning ideas into interfaces that solve real
                     problems.
                 </p>
                 <p className="font-body tracking-wide text-ink-soft dark:text-ink-soft-dark">
